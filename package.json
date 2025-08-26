@@ -7,24 +7,32 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.1",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.3.0",
     "web-vitals": "^1.0.1",
     "web3": "^1.5.1",
-    "web3-eth-contract": "^1.5.2"
+    "web3-eth-contract": "^1.5.2",
+    "crypto-browserify": "^3.12.0",
+    "stream-browserify": "^3.0.0",
+    "assert": "^2.0.0",
+    "stream-http": "^3.2.0",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "url": "^0.11.0",
+    "buffer": "^6.0.3",
+    "process": "^0.11.10",
+    "react-app-rewired": "^2.2.1"
   },
-  "author": "Daniel Eugene Botha (HashLips)",
-  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "browserslist": {
     "production": [
@@ -37,5 +45,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "react-app-rewired": {
+    "webpack": {
+      "resolve": {
+        "fallback": {
+          "crypto": "crypto-browserify",
+          "stream": "stream-browserify",
+          "assert": "assert",
+          "http": "stream-http",
+          "https": "https-browserify",
+          "os": "os-browserify/browser",
+          "url": "url",
+          "buffer": "buffer",
+          "process": "process/browser"
+        }
+      }
+    }
   }
 }
